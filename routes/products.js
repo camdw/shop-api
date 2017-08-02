@@ -20,19 +20,19 @@ router.get('/', (req, res, next) => {
 });
 
 /* GET Product details. */
-router.get('/products/:id', (req, res) => {
+router.get('/:id', (req, res) => {
   if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
     return;
   }
 
-  Phone.findById(req.params.id, (err, thePhone) => {
+  Product.findById(req.params.id, (err, theProduct) => {
       if (err) {
         res.json(err);
         return;
       }
 
-      res.json(thePhone);
+      res.json(theProduct);
     });
 });
 
