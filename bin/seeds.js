@@ -1240,7 +1240,7 @@ const products = [
 	'price': 65.00,
 	'sale_price': 39.00,
 	'product_type': 'Shoes',
-    'color': 'Ink Blue',
+  'color': 'Ink Blue',
 	'size': '39',
    'product_image': {
       'name': 'ZSE013137_1',

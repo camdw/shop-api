@@ -11,11 +11,26 @@ const productSchema = new Schema({
 	'product_type': String,
   	'color': String,
 	'size': String,
-	'product_image': String,
-	'product_image_2': String,
-	'product_image_3': String,
-	'product_image_4': String,
-	'color_image': String,
+	'product_image': {
+		'name': String,
+		'path': String
+	},
+	'product_image_2': {
+		'name': String,
+		'path': String
+	},
+	'product_image_3': {
+		'name': String,
+		'path': String
+	},
+	'product_image_4': {
+		'name': String,
+		'path': String
+	},
+	'color_image': {
+		'name': String,
+		'path': String
+	},
 	'related_products': []
 });
 
