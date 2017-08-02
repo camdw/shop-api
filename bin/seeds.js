@@ -2142,3 +2142,15 @@ const products = [
       'path': 'http://images.nicethings.es/ecommerce/opciones/WBE298_438.jpg'
     },
     'related_products': ['WSE461', 'WSE488', 'WBE305']
+}]
+
+
+Product.create(products, (err, docs) => {
+  if (err) {
+    throw err;
+  }
+  docs.forEach((product) => {
+    console.log('product uploaded')
+  });
+  mongoose.connection.close();
+});
