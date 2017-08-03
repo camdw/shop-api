@@ -8,12 +8,12 @@ const users = [
 {
   'email': 'camille@test.com',
   'password': 'test',
-  'firstname': 'Camille',
-  'lastname': 'Test',
+  'firstname': '',
+  'lastname': '',
   'address': {
-    'street': 'Test Street',
-    'postal_code': '08000',
-    'city': 'Barcelona',
+    'street': '',
+    'postal_code': '',
+    'city': '',
   },
 }]
 
