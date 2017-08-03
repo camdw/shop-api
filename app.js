@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', userAuth);
-app.use('/products', passport.authenticate('jwt', {session: false}), products);
+app.use('/products', products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
