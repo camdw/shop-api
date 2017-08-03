@@ -4,10 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var passport = require('./configs/passport');
 
 var index = require('./routes/index');
 var products = require('./routes/products');
+var userAuth = require('./routes/user-auth');
 
 // database connection
 require('./configs/database');
@@ -30,8 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
-app.use('/', index);
-app.use('/products', products);
+app.use('/', userAuth);
+app.use('/products', passport.authenticate('jwt', {session: false}), products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
