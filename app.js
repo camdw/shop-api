@@ -35,7 +35,7 @@ app.use(cors());
 app.use('/', index);
 app.use('/login', userAuth);
 app.use('/products', products);
-app.use('/categories', categories);
+app.use('/category', categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

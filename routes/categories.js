@@ -4,35 +4,18 @@ const mongoose = require('mongoose');
 const Product = require('../models/Product');
 
 /* GET Category listing. */
-router.get('/categories', (req, res, next) => {
-  console.log(req)
-  // Product.find((err, productList) => {
-  //   if (err) {
-  //     res.json(err);
-  //     return;
-  //   }
-  //   res.json(productList);
-    
-  // });
+router.get('/:category', (req, res) => {
+  console.log(req.params.category)
+
+  Product.find({'category': req.params.category}, (err, products) => {
+      if (err) {
+        res.json(err);
+        return;
+      }
+
+      res.json(products);
+    });
 });
 
-
-/* GET Categories */
-router.get('/:product_type', (req, res) => {
-  console.log(req.params)
-  // if(!mongoose.Types.ObjectId.isValid(req.params.product_type)) {
-  //   res.status(400).json({ message: 'Specified category is not valid' });
-  //   return;
-  // }
-
-  // Product.findById(req.params.id, (err, theProduct) => {
-  //     if (err) {
-  //       res.json(err);
-  //       return;
-  //     }
-
-  //     res.json(theProduct);
-  //   });
-});
 
 module.exports = router;
