@@ -12,7 +12,7 @@ const products = [
 	'description': 'Cheese cloth dress, Frill collar. Ruched front. L: 88cm in size 38',
 	'price': 65.00,
 	'sale_price': 32.50,
-	'product_type': 'Dress',
+	'category': 'Dresses',
   'color': [{
     'name': 'Intense Yellow',
     'code': '108'
@@ -37,7 +37,7 @@ const products = [
 	'description': 'Wrapped kimono dress. Fasten on side with tie belt in the same fabric and inner button. Length 92cm in size 38',
 	'price': 79.90,
 	'sale_price': 39.95,
-	'product_type': 'Dress',
+	'category': 'Dresses',
   'color': [{
     'name': 'Ink Blue',
     'code': '137'
@@ -62,7 +62,7 @@ const products = [
 	'description': 'Sleeveless tunic. V-neck and back. Floral jacquard. Split sides.',
 	'price': 79.90,
 	'sale_price': 31.95,
-	'product_type': 'Dress',
+	'category': 'Dresses',
   'color': [{
     'name': 'Cobalt Blue',
     'code': '138'
@@ -83,7 +83,7 @@ const products = [
 	'description': 'Leather clog // 9 cm block high heel and 3,5 cm platform // Made in Spain',
 	'price': 99.90,
 	'sale_price': 39.95,
-	'product_type': 'Shoes',
+	'category': 'Shoes',
   'color': [{
     'name': 'Red',
     'code': '250'
@@ -106,7 +106,7 @@ const products = [
 	'description': 'Print espadrille trainers // 2,5 cm woven-jute flatform // Made in Spain',
   'price': 65.00,
 	'sale_price': 39.00,
-	'product_type': 'Shoes',
+	'category': 'Shoes',
   'color': [{
     'name': 'Ink Blue',
     'code': '137'
@@ -128,12 +128,8 @@ const products = [
 	'description': 'Cross-over sandals in suede // Heel: 5 cm // Made in Spain',
 	'price': 119.00,
 	'sale_price': 59.95,
-	'product_type': 'Shoes',
+	'category': 'Shoes',
   'color': [{
-    'name': 'Old Gold',
-    'code': '801'
-  },
-  {
     'name': 'Cinnamon',
     'code': '369'
   },
@@ -159,7 +155,7 @@ const products = [
 	'description': 'W: 32cm (26cm bottom width) x H: 37cm x D: 13cm // Canvas backpack with polyurethane base, zip fastening and small front pocket. Interior pockets.',
   'price': 65.00,
 	'sale_price': 32.50,
-	'product_type': 'Bag',
+	'category': 'Bags',
   'color': [{
     'name': 'Ecru',
     'code': '620'
@@ -180,7 +176,7 @@ const products = [
 	'description': 'W: 24cm x H: 17cm x D: 5cm // Crossbody bag with horse leather flap-top and metal ring. Magnetic fastening. Long detachable and adjustable strap and inner pockets.',
   'price': 69.90,
 	'sale_price': 34.95,
-	'product_type': 'Bag',
+	'category': 'Bags',
   'color': [{
     'name': 'Cobalt Blue',
     'code': '138'
@@ -201,7 +197,7 @@ const products = [
 	'description': 'W: 24cm x H: 17cm x D: 5cm // Crossbody bag with horse leather flap-top and metal ring. Magnetic fastening. Long detachable and adjustable strap and inner pockets.',
   'price': 69.90,
 	'sale_price': 34.95,
-	'product_type': 'Bag',
+	'category': 'Bags',
   'color': [{
     'name': 'Grey',
     'code': '204'
