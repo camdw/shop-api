@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', index);
-app.use('/login', userAuth);
+app.use('/', userAuth);
 app.use('/products', products);
 app.use('/category', categories);
 
