@@ -14,9 +14,13 @@ const bcryptSalt = 10;
 router.post('/signup', (req, res, next) => {
   let email = req.body.email;
   let password = req.body.password;
+  let firstname = req.body.firstname;
+  let lastname = req.body.lastname;
 
-  if (!email || !password) {
-    res.status(400).json({ message: 'Provide email and password' });
+  console.log('HOLA')
+
+  if (!email || !password || !firstname || !lastname) {
+    res.status(400).json({ message: 'Provide fill out all the fields!' });
     return;
   }
 
@@ -26,13 +30,20 @@ router.post('/signup', (req, res, next) => {
       return;
     }
 
+  console.log('HOLA')
     let salt = bcrypt.genSaltSync(bcryptSalt);
     let hashPass = bcrypt.hashSync(password, salt);
 
     const theUser = new User({
       email,
-      password: hashPass
+      password: hashPass,
+      firstname,
+      lastname
+
     });
+
+    console.log('HOLA')
+    console.log(theUser)
 
     theUser.save((err, user) => {
       if (err) {
@@ -43,6 +54,7 @@ router.post('/signup', (req, res, next) => {
         const token = jwt.sign(payload, jwtOptions.secretOrKey);
 
         res.status(200).json({ token, user });
+        console.log(user)
       }
     });
   });
