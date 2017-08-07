@@ -3,6 +3,13 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
   'user_id': String,
-  'order_items': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
+  'order_items': [{
+    'productId': Schema.Types.ObjectId,
+    'ordered_color': String,
+    'ordered_size': String,
+    'quantity': Number,
+    'product_price': Number,
+    'total_price': Number
+  }],
   'total': Number,
 });
