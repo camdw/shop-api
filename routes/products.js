@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const Product = require('../models/Product');
+const User = require('../models/User');
+
 
 /* GET Product listing. */
 router.get('/', (req, res, next) => {
@@ -27,5 +29,18 @@ router.get('/:id', (req, res) => {
       res.json(theProduct);
     });
 });
+
+
+router.put('/addFavourite', (req, res) => {
+  console.log(req.body)
+  var userId = req.body.userId;
+  var productId = req.body.productId
+
+  User.findByIdAndUpdate(userId, {$push: { "favourite_products": productId }}, {new: true}, (err, user)=>{
+    res.send(user)
+  })
+
+})
+
 
 module.exports = router;
