@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userBehaviourSchema = new Schema({
-  'user_id': [{'type': Schema.Types.ObjectId, 'ref': 'User'}],
+  'user_id': {'type': Schema.Types.ObjectId, 'ref': 'User'},
   'past_orders': [{'type': Schema.Types.ObjectId, 'ref': 'Order'}],
   'favourite_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
   'abandonned_cart': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
@@ -19,9 +19,5 @@ const userBehaviourSchema = new Schema({
     'sale_price_frequency': Number,
     'average_price': Number,
     'average_discount': Number
-  },
-  'timestamps': {
-    'createdAt': 'created_at',
-    'updatedAt': 'updated_at'
   }
 });

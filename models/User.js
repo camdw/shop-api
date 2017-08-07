@@ -10,6 +10,22 @@ const userSchema = new Schema({
     'street': String,
     'postal_code': String,
     'city': String,
+  },
+  'past_orders': [{'type': Schema.Types.ObjectId, 'ref': 'Order'}],
+  'favourite_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
+  'visited_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
+  'sizes': {
+    'tops': [],
+    'trousers': [],
+    'dresses': [],
+    'shoes': []
+  },
+  'colours': [],
+  'price_behaviour': {
+    'full_price_frequency': Number,
+    'sale_price_frequency': Number,
+    'average_price': Number,
+    'average_discount': Number
   }
 });
 

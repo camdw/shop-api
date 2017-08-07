@@ -2,19 +2,24 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const Product = require('../models/Product');
+const User = require('../models/User');
+const Orders = require('../models/Order')
 
-/* GET Category listing. */
-router.get('/:category', (req, res) => {
+/* GET user details. */
+router.get('/:id', (req, res) => {
 
-  Product.find({'category': req.params.category}, (err, products) => {
+  User.findById(req.params.id, (err, user) => {
       if (err) {
         res.json(err);
         return;
       }
 
-      res.json(products);
+      res.json(user);
     });
 });
 
 
+
+
 module.exports = router;
+

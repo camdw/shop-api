@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var products = require('./routes/products');
 var userAuth = require('./routes/user-auth');
 var categories = require('./routes/categories')
+var myAccount = require('./routes/my-account')
 
 // database connection
 require('./configs/database');
@@ -36,6 +37,7 @@ app.use('/', index);
 app.use('/', userAuth);
 app.use('/products', products);
 app.use('/category', categories);
+app.use('/my-account', myAccount);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

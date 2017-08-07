@@ -6,6 +6,7 @@
     "start": "node ./bin/www",
     "seeds-products": "node ./bin/seeds-products",
     "seeds-users": "node ./bin/seeds-users",
+    "seeds-behaviour": "node ./bin/seeds-behaviour",
     "start-dev": "nodemon ./bin/www"
   },
   "dependencies": {

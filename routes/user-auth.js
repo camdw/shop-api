@@ -17,8 +17,6 @@ router.post('/signup', (req, res, next) => {
   let firstname = req.body.firstname;
   let lastname = req.body.lastname;
 
-  console.log('HOLA')
-
   if (!email || !password || !firstname || !lastname) {
     res.status(400).json({ message: 'Provide fill out all the fields!' });
     return;
@@ -30,7 +28,6 @@ router.post('/signup', (req, res, next) => {
       return;
     }
 
-  console.log('HOLA')
     let salt = bcrypt.genSaltSync(bcryptSalt);
     let hashPass = bcrypt.hashSync(password, salt);
 
@@ -41,9 +38,6 @@ router.post('/signup', (req, res, next) => {
       lastname
 
     });
-
-    console.log('HOLA')
-    console.log(theUser)
 
     theUser.save((err, user) => {
       if (err) {
