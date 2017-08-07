@@ -35,12 +35,23 @@ router.put('/addFavourite', (req, res) => {
   console.log(req.body)
   var userId = req.body.userId;
   var productId = req.body.productId
+  var match;
+  
+  User.findById(userId, (err, theUser) => {
+    
+    if(theUser.favourite_products.indexOf(productId) === -1)
+      User.findByIdAndUpdate(userId, {$push: { "favourite_products": productId }}, {new: true}, (err, user)=>{
+        res.send(user)
+      }) 
+    }
+  )
 
-  User.findByIdAndUpdate(userId, {$push: { "favourite_products": productId }}, {new: true}, (err, user)=>{
-    res.send(user)
-  })
+  
 
 })
+
+
+
 
 
 module.exports = router;
