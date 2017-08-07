@@ -8,14 +8,29 @@ const Orders = require('../models/Order')
 /* GET user details. */
 router.get('/:id', (req, res) => {
 
-  User.findById(req.params.id, (err, user) => {
-      if (err) {
-        res.json(err);
-        return;
-      }
+  User
+      .findOne({_id: req.params.id})
+      .populate("favourite_products")
+      .exec((err, user) => {
+        if (err) {
+          next(err);
+          return;
+          }
+        console.log(user)
+    res.json(user);
 
-      res.json(user);
-    });
+  });
+
+  // User.findById(req.params.id, (err, user) => {
+  //     if (err) {
+  //       res.json(err);
+  //       return;
+  //     }
+
+
+
+  //     res.json(user);
+  //   });
 });
 
 

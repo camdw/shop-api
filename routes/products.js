@@ -30,12 +30,10 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
+/* PUT Add Favourite */
 router.put('/addFavourite', (req, res) => {
-  console.log(req.body)
   var userId = req.body.userId;
   var productId = req.body.productId
-  var match;
   
   User.findById(userId, (err, theUser) => {
     
@@ -45,10 +43,18 @@ router.put('/addFavourite', (req, res) => {
       }) 
     }
   )
-
 })
 
-
+/* PUT Remove Favourite */
+router.put('/removeFavourite', (req, res) => {
+  var userId = req.body.userId;
+  var productId = req.body.productId
+  
+  User.findByIdAndUpdate(userId, {$pull: { "favourite_products": productId }}, {new: true}, (err, user)=>{
+        res.send(user)
+      }) 
+    }
+  )
 
 
 
