@@ -21,3 +21,8 @@ const userBehaviourSchema = new Schema({
     'average_discount': Number
   }
 });
+
+
+const Behaviour = mongoose.model('Behaviour', userBehaviourSchema);
+
+module.exports = Behaviour;

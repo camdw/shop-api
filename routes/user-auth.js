@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const jwtOptions = require('../configs/jwt');
 
 const User = require('../models/User');
+const Behaviour = require('../models/UserBehaviour');
 
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
@@ -39,6 +40,7 @@ router.post('/signup', (req, res, next) => {
 
     });
 
+  
     theUser.save((err, user) => {
       if (err) {
         res.status(400).json({ message: err });
@@ -47,12 +49,43 @@ router.post('/signup', (req, res, next) => {
         const payload = {id: user._id, user: user.email};
         const token = jwt.sign(payload, jwtOptions.secretOrKey);
 
-        res.status(200).json({ token, user });
-        console.log(user)
+        // user
+
+        const theBehaviour = new Behaviour({
+          user_id: user._id
+         });
+
+    theBehaviour.save((err) => {
+     if (err) {
+      res.json(err);
+      return;
       }
     });
+
+        res.status(200).json({ token, user });
+      }
+    });
+
   });
+
 });
+
+
+router.post('/behaviour', (req, res, next) => {
+  const theBehaviour = new Behaviour({
+    user_id: req.body.id
+  });
+
+  theBehaviour.save((err) => {
+    if (err) {
+      res.json(err);
+      return;
+    }
+
+    res.status(200).json({ behaviour });
+    });
+  });
+
 
 router.post('/login', (req, res, next) => {
   let email = req.body.email;

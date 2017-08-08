@@ -14,6 +14,14 @@ const userSchema = new Schema({
   'past_orders': [{'type': Schema.Types.ObjectId, 'ref': 'Order'}],
   'favourite_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
   'visited_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
+  'current_cart': [{
+    'productId': String,
+    'productSku': String,
+    'ordered_color': String,
+    'ordered_size': String,
+    'quantity': Number,
+    'product_price': Number,
+    'total_price': Number}],
   'sizes': {
     'tops': [],
     'trousers': [],
