@@ -8,8 +8,6 @@ const orderSchema = new Schema({
     'ordered_color': String,
     'ordered_size': String,
     'quantity': Number,
-    'product_price': Number,
-    'total_price': Number
   }],
   'total': Number,
 });

@@ -9,8 +9,9 @@ var passport = require('./configs/passport');
 var index = require('./routes/index');
 var products = require('./routes/products');
 var userAuth = require('./routes/user-auth');
-var categories = require('./routes/categories')
-var myAccount = require('./routes/my-account')
+var categories = require('./routes/categories');
+var myAccount = require('./routes/my-account');
+var myCart = require('./routes/my-cart');
 
 // database connection
 require('./configs/database');
@@ -38,6 +39,8 @@ app.use('/', userAuth);
 app.use('/products', products);
 app.use('/category', categories);
 app.use('/my-account', myAccount);
+app.use('/my-cart', myCart);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
