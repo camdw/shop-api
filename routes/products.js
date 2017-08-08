@@ -38,8 +38,6 @@ router.put('/addFavourite', (req, res) => {
   
   Behaviour.findOne({user_id: userId}, (err, theBehaviour) => {
 
-    console.log(theBehaviour.favourite_products)
-
     if(theBehaviour.favourite_products.indexOf(productId) === -1) {
       Behaviour.findOneAndUpdate({user_id: userId}, {$push: { "favourite_products": productId }}, {new: true}, (err, behaviour)=>{
         res.send(behaviour)
@@ -53,8 +51,8 @@ router.put('/removeFavourite', (req, res) => {
   var userId = req.body.userId;
   var productId = req.body.productId
   
-  User.findByIdAndUpdate(userId, {$pull: { "favourite_products": productId }}, {new: true}, (err, user)=>{
-        res.send(user)
+  Behaviour.findOneAndUpdate({user_id: userId}, {$pull: { "favourite_products": productId }}, {new: true}, (err, behaviour)=>{
+        res.send(behaviour)
       }) 
     }
   )
