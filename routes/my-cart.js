@@ -3,8 +3,9 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const Product = require('../models/Product');
 const User = require('../models/User');
-const Orders = require('../models/Order');
+const Order = require('../models/Order');
 const Behaviour = require('../models/UserBehaviour')
+
 
 /* GET cart product details. */
 router.get('/:id', (req, res) => {
@@ -33,6 +34,28 @@ router.put('/deleteItem', (req, res) => {
      }
   )
 
+/* POST create order */
+router.post('/order', (req, res) => {
+
+  console.log(req.body)
+  
+  const theOrder = new Order ({
+    user_id: req.body.userId,
+    orderItems: req.body.orderItems,
+    total: req.body.total
+  });
+
+  console.log(theOrder)
+
+    theOrder.save((err) => {
+     if (err) {
+      res.json(err);
+      return;
+      }
+    });
+
+
+})
 
 
 

@@ -2,12 +2,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
-  'user_id': String,
+  'user_id': {'type': Schema.Types.ObjectId, 'ref': 'User'},
   'order_items': [{
-    'productId': Schema.Types.ObjectId,
+    'productId': {'type': Schema.Types.ObjectId, 'ref': 'Product'},
     'ordered_color': String,
     'ordered_size': String,
-    'quantity': Number,
   }],
   'total': Number,
 });
+
+const Order = mongoose.model('Order', orderSchema);
+
+module.exports = Order;
