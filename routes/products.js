@@ -3,6 +3,7 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const Product = require('../models/Product');
 const User = require('../models/User');
+const Behaviour = require('../models/UserBehaviour.js')
 
 
 /* GET Product listing. */
@@ -35,14 +36,16 @@ router.put('/addFavourite', (req, res) => {
   var userId = req.body.userId;
   var productId = req.body.productId
   
-  User.findById(userId, (err, theUser) => {
-    
-    if(theUser.favourite_products.indexOf(productId) === -1)
-      User.findByIdAndUpdate(userId, {$push: { "favourite_products": productId }}, {new: true}, (err, user)=>{
-        res.send(user)
+  Behaviour.findOne({user_id: userId}, (err, theBehaviour) => {
+
+    console.log(theBehaviour.favourite_products)
+
+    if(theBehaviour.favourite_products.indexOf(productId) === -1) {
+      Behaviour.findOneAndUpdate({user_id: userId}, {$push: { "favourite_products": productId }}, {new: true}, (err, behaviour)=>{
+        res.send(behaviour)
       }) 
     }
-  )
+  })
 })
 
 /* PUT Remove Favourite */
