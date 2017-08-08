@@ -6,23 +6,6 @@ const User = require('../models/User');
 const Orders = require('../models/Order');
 const Behaviour = require('../models/UserBehaviour')
 
-/* GET user details. */
-// router.get('/:id', (req, res) => {
-
-//   User
-//       .findOne({_id: req.params.id})
-//       .populate("favourite_products")
-//       .exec((err, user) => {
-//         if (err) {
-//           next(err);
-//           return;
-//           }
-
-//     res.json(user);
-
-//   });
-// });
-
 /* GET user behaviour. */
 router.get('/:id', (req, res) => {
   
@@ -39,7 +22,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-/* POST Product to Cart. */
+
 
 
 
