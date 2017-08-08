@@ -16,21 +16,9 @@ router.get('/:id', (req, res) => {
           next(err);
           return;
           }
-        console.log(user)
     res.json(user);
 
   });
-
-  // User.findById(req.params.id, (err, user) => {
-  //     if (err) {
-  //       res.json(err);
-  //       return;
-  //     }
-
-
-
-  //     res.json(user);
-  //   });
 });
 
 
