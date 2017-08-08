@@ -59,6 +59,7 @@ router.put('/removeFavourite', (req, res) => {
 
 
 /* PUT Product to Cart. */
+
 router.put('/addToCart', (req, res) => {
   var userId = req.body.userId;
   var item = req.body.cartItem;
@@ -68,5 +69,7 @@ router.put('/addToCart', (req, res) => {
       }) 
      }
   )
+
+
 
 module.exports = router;

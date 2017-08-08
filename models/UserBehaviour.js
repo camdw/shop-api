@@ -9,6 +9,7 @@ const userBehaviourSchema = new Schema({
     'productId': {'type': Schema.Types.ObjectId, 'ref': 'Product'},
     'ordered_color': String,
     'ordered_size': String,
+    'quantity': Number,
   }],
   'visited_products': [{'type': Schema.Types.ObjectId, 'ref': 'Product'}],
   'sizes': {
