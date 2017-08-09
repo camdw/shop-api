@@ -24,6 +24,24 @@ router.get('/:id', (req, res) => {
 
 });
 
+router.get('/orders/:id', (req, res) => {
+  
+  Orders
+      .find({user_id: req.params.id})
+      .populate('order_items.productId')
+      .exec((err, orders) => {
+        if (err) {
+        next(err);
+        return;
+        }
+    
+        res.json(orders);
+
+  });
+
+
+
+});
 
 
 

@@ -9,7 +9,7 @@ const orderSchema = new Schema({
     'ordered_size': String,
   }],
   'total': Number,
-});
+}, { 'timestamps': {'createdAt': 'created_at'} });
 
 const Order = mongoose.model('Order', orderSchema);
 
