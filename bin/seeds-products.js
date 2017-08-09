@@ -72,6 +72,122 @@ const products = [
   },
 
 
+
+  /// TOPS ///
+
+  //TOP 1 WWE610
+  {
+  'mpn': 'WWE610',
+	'title': 'Fringes Top',
+	'description': 'Half sleeve top and V-neck. Frayed hem. L: 56cm S/38',
+	'price': 99.90,
+	'sale_price': 49.95,
+	'category': 'Tops',
+  'color': [{
+    'name': 'Dark Navy',
+    'code': '135'
+  },
+  {
+    'name': 'Ecru',
+    'code': '621'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+//TOP 2 WWE288
+{
+  'mpn': 'WWE288',
+	'title': '"Crazy Jungle" Printed Top',
+	'description': '"Crazy Jungle" print sleeveless top. Square neck and V-back. Darts at bust. Split sides. L: 57 cm S/38',
+	'price': 65.00,
+	'sale_price': 32.50,
+	'category': 'Tops',
+  'color': [{
+    'name': 'Aquamarine',
+    'code': '500'
+  },
+  {
+    'name': 'Dark Grey',
+    'code': '209'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+//TOP 3 WWE088
+{
+  'mpn': 'WWE088',
+	'title': 'Top With Ruffles',
+	'description': 'Boatneck top, frill hem detail. Half sleeve with frill cuffs.',
+	'price': 69.90,
+	'sale_price': 34.95,
+	'category': 'Tops',
+  'color': [{
+    'name': 'Light Aquamarine',
+    'code': '501'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+  // SKIRTS //
+
+
+  //SKIRT 1 WWE174
+  {
+  'mpn': 'WWE174',
+	'title': '"Geometric Dots" Printed Skirt',
+	'description': 'Cheese cloth skirt. "Geometric Dots" print. Side pockets. Stretch waist at back. Tie belt in the same fabric. Length 50cm in size 38',
+	'price': 69.90,
+	'sale_price': 34.95,
+	'category': 'Skirts',
+  'color': [{
+    'name': 'Geometric Dots',
+    'code': '521'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+//SKIRT 2 WJE552
+{
+  'mpn': 'WJE552',
+	'title': 'Ribbed Midi Skirt',
+	'description': 'Ribbed skirt in cotton. Midi length, concealed side zip.',
+	'price': 50.00,
+	'sale_price': 24.50,
+	'category': 'Skirts',
+  'color': [{
+    'name': 'Dark Navy',
+    'code': '135'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+//SKIRT 3 WWE289
+{
+  'mpn': 'WWE289',
+	'title': '"Crazy Jungle" Cross Skirt',
+	'description': 'Boatneck top, frill hem detail. Half sleeve with frill cuffs.',
+	'price': 85.00,
+	'sale_price': 51.00,
+	'category': 'Skirts',
+  'color': [{
+    'name': 'Aquamarine',
+    'code': '500'
+  }],
+	'size': ['36', '38', '40', '42'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
   /// SHOES /////
 
 
@@ -208,9 +324,106 @@ const products = [
   }],
 	'size': ['U'],
   'related_products': ['WSE461', 'WSE488', 'WBE305']
-  }]
+  },
 
+
+///Accessories
+
+  //ACC 1
+  {
+  'mpn': 'ZYE023',
+	'title': 'Glazed Pendant Necklace',
+	'description': '62 cm // Enamel pendant // Composition: 100% Brass',
+  'price': 49.00,
+	'sale_price': 19.50,
+	'category': 'Accessories',
+  'color': [{
+    'name': 'Aquamarine',
+    'code': '500'
+  }],
+	'size': ['U'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+ 
+  //ACC 2
+  {
+  'mpn': 'WYE495',
+	'title': 'Circles Necklace',
+	'description': '62 cm // Enamel pendant // Composition: 100% Brass',
+  'price': 40.90,
+	'sale_price': 25.95,
+	'category': 'Accessories',
+  'color': [{
+    'name': 'Light Pink',
+    'code': '447'
+  }],
+	'size': ['U'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
   
+
+  //ACC 3
+  {
+  'mpn': 'WYE496',
+	'title': 'Rings Necklace',
+	'description': '62 cm // Enamel pendant // Composition: 100% Brass',
+  'price': 69.90,
+	'sale_price': 34.95,
+	'category': 'Accessories',
+  'color': [{
+    'name': 'Aquamarine',
+    'code': '500'
+  },
+  {
+    'name': 'Mint',
+    'code': '515'
+  }],
+	'size': ['U'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+   //ACC 4
+  {
+  'mpn': 'WYE499',
+	'title': 'Geometric Earings',
+	'description': 'Long earings, geometric shape. L. 7cm',
+  'price': 39.90,
+	'sale_price': 19.95,
+	'category': 'Accessories',
+  'color': [{
+    'name': 'Aquamarine',
+    'code': '500'
+  },
+  {
+    'name': 'Pale Pink',
+    'code': '515'
+  },
+  {
+    'name': 'Off White',
+    'code': '010'
+  }],
+	'size': ['U'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  },
+
+
+   //ACC 5
+  {
+  'mpn': 'WFE455',
+	'title': 'Aminal Print Scarf',
+	'description': '50 cm X 180 cm // Linen scarf in "ANIMAL PATCH PRINT" // Composition: 100% Linen',
+  'price': 39.90,
+	'sale_price': 19.95,
+	'category': 'Accessories',
+  'color': [{
+    'name': 'Dark Red',
+    'code': '450'
+  }],
+	'size': ['U'],
+  'related_products': ['WSE461', 'WSE488', 'WBE305']
+  }]
 
 
 Product.create(products, (err, docs) => {
