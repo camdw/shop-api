@@ -6,21 +6,22 @@ const User = require('../models/User');
 const Orders = require('../models/Order');
 const Behaviour = require('../models/UserBehaviour')
 
-/* GET user behaviour. */
+/* GET user behaviour and orders. */
 router.get('/:id', (req, res) => {
   
   Behaviour
       .findOne({user_id: req.params.id})
-      .populate("favourite_products")
+      .populate('favourite_products')
+      .populate('past_orders')
       .exec((err, behaviour) => {
         if (err) {
         next(err);
         return;
         }
-  console.log(behaviour)
     res.json(behaviour);
 
   });
+
 });
 
 
