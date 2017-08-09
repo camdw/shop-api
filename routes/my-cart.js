@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-/* PUT Remove Favourite */
+/* PUT remove item from Cart */
 router.put('/deleteItem', (req, res) => {
   var userId = req.body.userId;
   var productId = req.body.productId;
@@ -33,6 +33,7 @@ router.put('/deleteItem', (req, res) => {
       }) 
      }
   )
+
 
 /* POST create order */
 router.post('/order', (req, res) => {
@@ -52,11 +53,25 @@ router.post('/order', (req, res) => {
       res.json(err);
       return;
       }
+      Behaviour.findOneAndUpdate({user_id: req.body.userId}, {'current_cart': [] }, {new: true}, (err, behaviour)=>{
+      }) 
+
     });
 
 
 })
 
+
+/* PUT empty Cart */
+router.put('/deleteItem', (req, res) => {
+  var userId = req.body.userId;
+  var productId = req.body.productId;
+
+  Behaviour.findOneAndUpdate({user_id: userId}, {$pull: { 'current_cart': { 'productId': productId } } }, {new: true}, (err, behaviour)=>{
+    res.send(behaviour)
+      }) 
+     }
+  )
 
 
 module.exports = router;
