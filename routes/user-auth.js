@@ -55,20 +55,17 @@ router.post('/signup', (req, res, next) => {
           user_id: user._id
          });
 
-    theBehaviour.save((err) => {
-     if (err) {
-      res.json(err);
-      return;
-      }
+         theBehaviour.save((err) => {
+          if (err) {
+            res.json(err);
+            return;
+            }
+              res.status(200).json({ token, user });
+          });
+        } 
+      });
     });
-
-        res.status(200).json({ token, user });
-      }
-    });
-
   });
-
-});
 
 
 router.post('/behaviour', (req, res, next) => {

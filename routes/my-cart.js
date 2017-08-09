@@ -15,7 +15,7 @@ router.get('/:id', (req, res) => {
       .populate("current_cart.productId")
       .exec((err, behaviour) => {
         if (err) {
-        next(err);
+        res.json(err);
         return;
         }
     res.json(behaviour);
@@ -37,29 +37,32 @@ router.put('/deleteItem', (req, res) => {
 
 /* POST create order */
 router.post('/order', (req, res) => {
-
-  console.log(req.body)
-  
   const theOrder = new Order ({
     user_id: req.body.userId,
-    orderItems: req.body.orderItems,
+    order_items: req.body.orderItems,
     total: req.body.total
   });
 
-  console.log(theOrder)
 
-    theOrder.save((err) => {
-     if (err) {
+  theOrder.save((err, order) => {
+    if (err) { 
       res.json(err);
-      return;
-      }
+    } else {
       Behaviour.findOneAndUpdate({user_id: req.body.userId}, {'current_cart': [] }, {new: true}, (err, behaviour)=>{
-      }) 
+        Behaviour.findOneAndUpdate({user_id: req.body.userId}, {$push: {'past_orders': order._id } }, {new: true}, (err, behaviour)=>{
+          res.json({message: order})
+        })
+      })  
 
-    });
+      
+    }
+    return;
+  });
+  
+});
 
 
-})
+
 
 
 /* PUT empty Cart */
