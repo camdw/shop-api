@@ -1,10 +1,11 @@
 'use strict';
+require("dotenv").config();
 
 const mongoose = require('mongoose');
 const dbName = 'dynamicshop';
 
 // connect to the database
-mongoose.connect(`mongodb://localhost:27017/${dbName}`);
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 
