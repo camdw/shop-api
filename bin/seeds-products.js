@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/dynamicshop');
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGODB_URI);
 
 const Product = require('../models/Product');
 
