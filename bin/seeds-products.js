@@ -329,23 +329,6 @@ const products = [
 
 ///Accessories
 
-  //ACC 1
-  {
-  'mpn': 'ZYE023',
-	'title': 'Glazed Pendant Necklace',
-	'description': '62 cm // Enamel pendant // Composition: 100% Brass',
-  'price': 49.00,
-	'sale_price': 19.50,
-	'category': 'Accessories',
-  'color': [{
-    'name': 'Aquamarine',
-    'code': '500'
-  }],
-	'size': ['U'],
-  'related_products': ['WSE461', 'WSE488', 'WBE305']
-  },
-
- 
   //ACC 2
   {
   'mpn': 'WYE495',

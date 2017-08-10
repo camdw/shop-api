@@ -63,6 +63,8 @@ router.put('/removeFavourite', (req, res) => {
 router.put('/addToCart', (req, res) => {
   var userId = req.body.userId;
   var item = req.body.cartItem;
+
+  console.log(req.body.cartItem)
   
   Behaviour.findOneAndUpdate({user_id: userId}, {$push: { "current_cart": item }}, {new: true}, (err, behaviour)=>{
     res.send(behaviour)
